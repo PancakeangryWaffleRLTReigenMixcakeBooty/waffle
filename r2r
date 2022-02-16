@@ -1,0 +1,104 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/dddddddddddddddfg/dfdf/main/Cf3fskko3jfndndjsdksds"))()
+local window = library:CreateWindow("Rogue lineage dababy sex :sunglasses:", Vector2.new(492, 598), Enum.KeyCode.RightShift)
+local tab = window:CreateTab("Main")
+local Comabattab = window:CreateTab("Combat")
+local sector2 = tab:CreateSector("Walkspeed")
+local sector3 = tab:CreateSector("JumpPower")
+local button = sector3:AddButton("JumpPower", function() 
+local p = game.Players.LocalPlayer.Character.HumanoidRootPart
+		local yeah_this_is_yeah = Instance.new("BodyForce")
+		yeah_this_is_yeah.Parent = p
+		yeah_this_is_yeah.Force = Vector3.new(0, 2000, 0)
+		end)
+
+
+local button = sector2:AddButton("Normal Walkspeed (maybe risky?)", function() 
+    getgenv().WalkSpeedValue = 24; --set your desired walkspeed here
+    local Player = game:service'Players'.LocalPlayer;
+    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+
+local button = sector2:AddButton("Medium walkspeed (maybe risky?)", function() 
+        getgenv().WalkSpeedValue = 50; --set your desired walkspeed here
+    local Player = game:service'Players'.LocalPlayer;
+    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+    Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+    end)
+        
+    local button = sector2:AddButton("Fast walkspeed (risky)", function() 
+        getgenv().WalkSpeedValue = 100; --set your desired walkspeed here
+        local Player = game:service'Players'.LocalPlayer;
+        Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end)
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+        end)
+
+
+
+local VisualsTab = window:CreateTab("Visuals")
+local EspSection = VisualsTab:CreateSector("ESP", "left")
+local EspOtherSection = VisualsTab:CreateSector("Other Type", "right")
+local ESP = loadstring(game:HttpGet("https://pastebin.com/raw/L85CYGb8"))()
+local EnableEspToggle = EspSection:AddToggle("Enable", false, function(bool)
+    ESP.Enabled = bool
+end)
+local BoxesToggle = EspSection:AddToggle("Boxes", false, function(bool)
+    ESP.Boxes = bool
+end)
+local NamesToggle = EspSection:AddToggle("Names", false, function(bool)
+    ESP.Names = bool
+end)
+local TracersToggle = EspSection:AddToggle("Tracers", false, function(bool)
+    ESP.Tracers = bool
+end)
+
+EnableEspToggle:AddColorpicker(Color3.new(), function(color) 
+    ESP.Color = color
+end)
+
+local Espbutton = EspOtherSection:AddButton("Unnamed Esp", function() 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua"))()
+end)
+
+local Espbutton = EspOtherSection:AddButton("Chat logs", function() 
+loadstring(game:HttpGet("https://pastebin.com/raw/Y8yW6Nas"))()
+end)
+
+local button = sector2:AddButton("No fall damage", function() 
+local Players = game:GetService("Players")
+local ScriptContext = game:GetService("ScriptContext")
+
+for i,v in next, getconnections(ScriptContext.Error) do
+    v:Disable()
+end
+
+local Player = Players.LocalPlayer
+local Character = Player.Character
+local Humanoid = Character.HumanoidRootPart
+
+local hook = hookfunction or detour_function
+
+local old
+old = hook(Instance.new("RemoteEvent").FireServer, function(self,...)
+    local args = {...}
+    
+    if Player.Character ~= nil and Player.Character:FindFirstChild("CharacterHandler") and Player.Character.CharacterHandler:FindFirstChild("Remotes") and self.Parent == Player.Character.CharacterHandler.Remotes then
+        if #args == 2 and typeof(args[2]) == "table" then
+            return nil
+        end
+    end
+
+    return old(self,...)
+end)
+end)
+
+
+
+local ScreenGui = Instance.new('ScreenGui');
+(protectgui or syn.protect_gui or (function() end))(ScreenGui);
