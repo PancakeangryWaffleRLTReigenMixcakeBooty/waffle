@@ -2007,7 +2007,7 @@ end
 
 
 
-local window = library:CreateWindow("pika hub", Vector2.new(492, 598), Enum.KeyCode.RightShift)
+local window = library:CreateWindow("test", Vector2.new(492, 598), Enum.KeyCode.RightShift)
 local tab = window:CreateTab("Test")
 
 local sector = tab:CreateSector("Test")
